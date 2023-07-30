@@ -8,6 +8,12 @@ $ docker compose up --force-recreate --build
 $ npm run start
 ```
 <br><br>
+
+## Tech stack
+- Nestjs v10 (require Node.js 16 or higher if running in local)
+- Postgres 14
+<br><br>
+
 ## Design and assumption
 - User api are secured by jwt authentication
 - db table is being done in a init.sql when the db is spin up in the docker, but in production the migration script should be done by migration library such as knex or flyway with a schema version history which support schema update
@@ -16,8 +22,6 @@ $ npm run start
 - User'name is assumed the name of user, that's why didnt deem it as a login credential
 - Return dto does not show the password for security reason
 - If the user is being deleted, the jwt token is still valid until this is expired (3600s by the setting), although that can be done by using storing the token in repository but not to complicated the design in that assignment
-<br><br>
-
 <br><br>
 ## How to test
 1. Visit http://localhost:3000/api
@@ -32,7 +36,6 @@ $ npm run start
 8. login again with the new user credential you just created, and the user api should be able to call.
 <br><br>
 
-<br><br>
 ## Unit Test
 
 ```bash
