@@ -15,6 +15,7 @@ $ npm run start
 - User email will be a login name, which is unique and able to change in the PUT api
 - User'name is assumed the name of user, that's why didnt deem it as a login credential
 - Return dto does not show the password for security reason
+- If the user is being deleted, the jwt token is still valid until this is expired (3600s by the setting), although that can be done by using storing the token in repository but not to complicated the design in that assignment
 <br><br>
 
 <br><br>
